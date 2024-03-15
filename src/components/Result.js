@@ -1,10 +1,10 @@
 import React from "react";
 import { Stack, Typography } from "@mui/material";
 import { PieChart } from "@mui/x-charts/PieChart";
-import { toCurrency, toPercent } from "../utils/format";
+import { toCurrency } from "../utils/format";
 
 const Result = ({ data }) => {
-	const { homeValue, downPayment, loanAmount, loanTerm, interestRate } = data;
+	const { downPayment, loanAmount, loanTerm, interestRate } = data;
 
 	const totalTermMonths = loanTerm * 12;
 	const monthlyInterestRate = interestRate / 100 / 12;
@@ -17,7 +17,6 @@ const Result = ({ data }) => {
 
 	const totalInterest = monthlyPayment * totalTermMonths - loanAmount;
 	const totalCost = downPayment + loanAmount + totalInterest;
-  const totalToRepay = loanAmount + totalInterest;
 
 	return (
 		<Stack gap={2} my={2}>

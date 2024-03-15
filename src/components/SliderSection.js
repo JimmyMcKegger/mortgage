@@ -5,15 +5,6 @@ import { toCurrency, toPercent } from "../utils/format";
 
 const SliderSection = ({ data, setData }) => {
 	const handleHomeValueChange = (value) => {
-		const maxLoanAmount = Math.min(
-			data.bankApprovalAmount,
-			value - data.downPayment
-		);
-
-		const loanAmount =
-			data.loanAmount > maxLoanAmount ? maxLoanAmount : data.loanAmount;
-		const downPayment = value - loanAmount;
-
 		setData({
 			...data,
 			homeValue: value,
@@ -21,12 +12,9 @@ const SliderSection = ({ data, setData }) => {
 	};
 
 	const handleDownPaymentChange = (value) => {
-		// Ensure downPayment plus loanAmount does not exceed homeValue
 		let loanAmount = data.homeValue - value;
 		if (loanAmount > data.bankApprovalAmount) {
 			loanAmount = data.bankApprovalAmount;
-			// If adjusting the loanAmount to stay within the bank limit, adjust downPayment accordingly
-			// This ensures the sum of downPayment and loanAmount equals homeValue
 			value = data.homeValue - loanAmount;
 		}
 
