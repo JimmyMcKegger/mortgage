@@ -12,15 +12,14 @@ function App() {
 		downPayment: 40000,
 		loanAmount: 335000,
 		loanTerm: 23,
-		interestRate: 2,
-    bankApprovalAmount: 440000,
+		interestRate: 3.5,
+		bankApprovalAmount: 440000,
 	});
-	// console.log(data);
 
 	return (
 		<div className="App">
 			<Navbar />
-			<Container maxWidth="xl" sx={{ marginTop: 4 }}>
+			<Container maxWidth="xl" sx={{ marginTop: 5}}>
 				<Grid container spacing={5} alignItems="center">
 					<Grid item xs={12} md={6}>
 						<SliderSelect data={data} setData={setData} />
