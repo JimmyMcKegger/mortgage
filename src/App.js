@@ -1,17 +1,38 @@
+import { useState } from "react";
+import { Grid } from "@mui/material";
+import { Container } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Result from "./components/Result";
-import SliderSelect from "./components/SliderSelect";
-import TenureSelect from "./components/TenureSelect";
+import SliderSelect from "./components/SliderSection";
+import TermSelect from "./components/MortgageApprovalDetails";
 
 function App() {
-  return (
-    <div className="App">
-      <Navbar/>
-      <SliderSelect/>
-      <TenureSelect/>
-      <Result/>
-    </div>
-  );
+	const [data, setData] = useState({
+		homeValue: 375000,
+		downPayment: 40000,
+		loanAmount: 335000,
+		loanTerm: 23,
+		interestRate: 2,
+    bankApprovalAmount: 440000,
+	});
+	// console.log(data);
+
+	return (
+		<div className="App">
+			<Navbar />
+			<Container maxWidth="xl" sx={{ marginTop: 4 }}>
+				<Grid container spacing={5} alignItems="center">
+					<Grid item xs={12} md={6}>
+						<SliderSelect data={data} setData={setData} />
+						<TermSelect data={data} setData={setData} />
+					</Grid>
+					<Grid item xs={12} md={6}>
+						<Result data={data} />
+					</Grid>
+				</Grid>
+			</Container>
+		</div>
+	);
 }
 
 export default App;
