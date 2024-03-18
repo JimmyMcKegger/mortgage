@@ -1,7 +1,7 @@
 import React from "react";
 import SliderComponent from "./common/SliderComponent";
 import { toCurrency, toPercent } from "../utils/format";
-import { handleIncrement, handleDecrement } from "../utils/sliderButtons";
+import { handleIncrement, handleDecrement, handlePercentIncrement, handlePercentDecrement } from "../utils/sliderButtons";
 
 
 const SliderSection = ({ data, setData }) => {
@@ -88,7 +88,7 @@ const SliderSection = ({ data, setData }) => {
 					})
 				}
 				incrementFunction={handlePercentIncrement}
-				decrementFunction={handlePercentageDecrement}
+				decrementFunction={handlePercentDecrement}
 			/>
 		</>
 	);
