@@ -8,3 +8,4 @@ export const toCurrency = (value) => {
 export const toPercent = (value) => {
   return `${value}%`;
 };
+

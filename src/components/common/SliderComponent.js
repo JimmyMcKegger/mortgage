@@ -14,16 +14,9 @@ const SliderComponent = ({
 	label,
 	unit,
 	amount,
+  incrementFunction,
+  decrementFunction
 }) => {
-  const handleIncrement = () => {
-    const newValue = Math.min(value + step, max);
-    onChange({}, newValue);
-  };
-
-  const handleDecrement = () => {
-    const newValue = Math.max(value - step, min);
-    onChange({}, newValue);
-  };
   return (
     <Stack my={1.4}>
       <Stack gap={1} direction="row" sx={{ mb: 2 }}>
@@ -46,7 +39,7 @@ const SliderComponent = ({
 
         {/* decrement button and min value */}
         <Stack direction={"row"} alignItems="center" spacing={1}>
-          <Button size="small" onClick={handleDecrement}><ArrowDropDownIcon /></Button>
+          <Button size="small" onClick={decrementFunction(value, step, min)}><ArrowDropDownIcon /></Button>
           <Typography variant="caption" color={"text.secondary"}>
             {unit} {min}
           </Typography>
@@ -57,7 +50,7 @@ const SliderComponent = ({
           <Typography variant="caption" color={"text.secondary"}>
             {unit} {max}
           </Typography>
-          <Button size="small" onClick={handleIncrement}><ArrowDropUpIcon /></Button>
+          <Button size="small" onClick={incrementFunction(value, step, max)}><ArrowDropUpIcon /></Button>
         </Stack>
 
       </Stack>

@@ -1,6 +1,7 @@
 import React from "react";
 import SliderComponent from "./common/SliderComponent";
 import { toCurrency, toPercent } from "../utils/format";
+import { handleIncrement, handleDecrement } from "../utils/sliderButtons";
 
 
 const SliderSection = ({ data, setData }) => {
@@ -45,6 +46,8 @@ const SliderSection = ({ data, setData }) => {
 				step={1000}
 				amount={toCurrency(data.homeValue)}
 				onChange={(e, value) => handleHomeValueChange(value)}
+				incrementFunction={handleIncrement}
+				decrementFunction={handleDecrement}
 			/>
 			<SliderComponent
 				label={"Down Payment"}
@@ -55,6 +58,8 @@ const SliderSection = ({ data, setData }) => {
 				step={500}
 				amount={toCurrency(data.downPayment)}
 				onChange={(e, value) => handleDownPaymentChange(value)}
+				incrementFunction={handleIncrement}
+				decrementFunction={handleDecrement}
 			/>
 			<SliderComponent
 				label="Mortgage Amount"
@@ -65,6 +70,8 @@ const SliderSection = ({ data, setData }) => {
 				value={data.loanAmount}
 				amount={toCurrency(data.loanAmount)}
 				onChange={(e, value) => handleLoanAmountChange(value)}
+				incrementFunction={handleIncrement}
+				decrementFunction={handleDecrement}
 			/>
 			<SliderComponent
 				label="Interest Rate"
@@ -80,6 +87,8 @@ const SliderSection = ({ data, setData }) => {
 						interestRate: value,
 					})
 				}
+				incrementFunction={handlePercentIncrement}
+				decrementFunction={handlePercentageDecrement}
 			/>
 		</>
 	);
