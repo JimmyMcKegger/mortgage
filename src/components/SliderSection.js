@@ -60,7 +60,7 @@ const SliderSection = ({ data, setData }) => {
 				label="Mortgage Amount"
 				min={0}
 				max={Math.min(data.bankApprovalAmount, data.homeValue)} // Ensure max does not exceed bank limit or home value
-				step={10000}
+				step={500}
 				defaultValue={data.loanAmount}
 				value={data.loanAmount}
 				amount={toCurrency(data.loanAmount)}
