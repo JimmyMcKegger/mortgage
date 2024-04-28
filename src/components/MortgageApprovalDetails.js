@@ -29,7 +29,10 @@ const MortgageApprovalDetails = ({ data, setData }) => {
 					<MenuItem value={10}>Ten</MenuItem>
 					<MenuItem value={15}>Fifteen</MenuItem>
 					<MenuItem value={20}>Twenty</MenuItem>
+					<MenuItem value={21}>Twenty One</MenuItem>
+					<MenuItem value={22}>Twenty Two</MenuItem>
 					<MenuItem value={23}>Twenty Three</MenuItem>
+					<MenuItem value={24}>Twenty Four</MenuItem>
 					<MenuItem value={25}>Twenty Five</MenuItem>
 				</Select>
 			</FormControl>
