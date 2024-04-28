@@ -23,7 +23,7 @@ const MortgageApprovalDetails = ({ data, setData }) => {
 	return (
 		<div>
 			<FormControl sx={{ m: 1, minWidth: 120 }}>
-				<InputLabel>Term</InputLabel>
+				<InputLabel>Initial Term</InputLabel>
 				<Select value={data.loanTerm} onChange={handleTermChange} label="Term">
 					<MenuItem value={5}>Five</MenuItem>
 					<MenuItem value={10}>Ten</MenuItem>
