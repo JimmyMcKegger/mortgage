@@ -8,11 +8,11 @@ import TermSelect from "./components/MortgageApprovalDetails";
 
 function App() {
 	const [data, setData] = useState({
-		homeValue: 375000,
-		downPayment: 40000,
-		loanAmount: 335000,
+		homeValue: 340000,
+		downPayment: 150000,
+		loanAmount: 190000,
 		loanTerm: 23,
-		interestRate: 3.5,
+		interestRate: 3.55,
 		bankApprovalAmount: 440000,
 	});
 
